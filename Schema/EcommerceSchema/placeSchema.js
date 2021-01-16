@@ -19,6 +19,13 @@ const Place = mongoose.Schema({
     subscription: {
         type: String,
         required: true
+    },
+    statistics: {
+        totalEarning: { type: Number },
+        totalOrderPerMonth: { type: Number },
+        mostNavigatedCategory: { type: String },
+        trendingProducts: [{ type: String }],
+        saleComparison: { type: Number }
     }
 
 });
