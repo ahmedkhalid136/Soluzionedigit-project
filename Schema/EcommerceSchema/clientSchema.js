@@ -13,3 +13,4 @@ const Client = mongoose.Schema({
         type:String
     }
 })
+module.exports=Client;
