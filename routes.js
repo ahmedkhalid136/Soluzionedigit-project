@@ -1,5 +1,5 @@
 const express = require("express");
-const router = express();
+const router = express.Router();
 const ChatRoute = require("./Modules/Chat/route.js");
 const TaskManagerRoute = require("./Modules/Task Manager/routes.js");
 const ECommerceRoute = require("./Modules/ECommerce/routes.js");

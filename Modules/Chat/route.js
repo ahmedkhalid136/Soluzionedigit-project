@@ -1,9 +1,9 @@
 const express = require("express");
-const router = express.Router;
+const router = express.Router();
 
 
 router.get("/Chat", function (req, res) {
-    console.log("Chat Route");
+    res.send("<h1>This is Chat route</h1>");
 });
 
 module.exports = router;
