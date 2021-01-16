@@ -1,9 +1,11 @@
 const mongoose = require("mongoose");
 
 const Product = mongoose.Schema({
+    //Variant Product to be added defined by the user
     variants: [{
         type: String
     }],
+    //Quantity of the product
     quantity: {
         type: Number,
         required: true
