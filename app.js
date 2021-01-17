@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const routes = require("./routes");
 const path = require('path');
-
+const expressValidator = require('express-validator')
 const socketio = require('socket.io')
 const http = require('http')
 const app = express()
