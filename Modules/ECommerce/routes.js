@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const validator = require('./validator')
-const controller = require('./controller')
+const validator = require('./validator');
+const controller = require('./controller');
 
 
 router.get("/ECommerce", function (req, res) {
@@ -9,18 +9,19 @@ router.get("/ECommerce", function (req, res) {
     res.send("<h1>ECommerce Route</h1>")
 });
 router.post("/createproduct",
-    ValidatorsInstance.createProduct(),
+validator.validate('createProduct'),
     async (req, res, next) => {
         try {
             const errors = validationResult(req);
             if (!errors.isEmpty()) {
                 return res.status(422).json({ errors: errors.array() });
             }
-
+           const data= controller.addproduct();
             
+                  return res.status(200).json({ data });
 
             // Return a response to client.
-            return res.status(200).json({ data });
+            
         } catch (err) {
             next(err);
         }
