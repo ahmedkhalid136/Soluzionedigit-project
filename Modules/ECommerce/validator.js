@@ -23,10 +23,10 @@ exports.addproducts = async(req,res,next) => {
       }
       const { quantity, variants, description, status } = req.body
       const product = await Product.create({
-
+        variants,
        quantity, 
 
-        variants,
+        
 
         description,
 
