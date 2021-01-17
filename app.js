@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(routes);
 
+// Testing for / Route
 app.get("/", function (req, res) {
     res.send("<h1>Hello World</h1>")
 });
