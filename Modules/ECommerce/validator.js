@@ -14,28 +14,28 @@ exports.validate = (method) => {
     }
   }
 
-exports.addproducts = async(req,res,next) => {
-  try{
-    const error = validationResult(req);
-    if (!errors.isEmpty()) {
-        res.status(422).json({ errors: errors.array() });
-        return;
-      }
-      const { quantity, variants, description, status } = req.body
-      const product = await Product.create({
-        variants,
-       quantity, 
+// exports.addproducts = async(req,res,next) => {
+//   try{
+//     const error = validationResult(req);
+//     if (!errors.isEmpty()) {
+//         res.status(422).json({ errors: errors.array() });
+//         return;
+//       }
+//       const { quantity, variants, description, status } = req.body
+//       const product = await Product.create({
+//         variants,
+//        quantity, 
 
         
 
-        description,
+//         description,
 
-        status,   
-      })
+//         status,   
+//       })
 
-      res.json(product)
-  }
-  catch(error){
-   return next (error)
-  }
-}
+//       res.json(product)
+//   }
+//   catch(error){
+//    return next (error)
+//   }
+// }
