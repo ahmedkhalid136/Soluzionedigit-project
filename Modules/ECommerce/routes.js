@@ -26,6 +26,9 @@ validator.validate('createProduct'),
             next(err);
         }
     });
+router.get("/getproduct",async(req,res,next)=>{
+    
+})
 module.exports = router;
 
 // validator.validate('createProduct'), 
