@@ -46,11 +46,11 @@ const Productschema = new mongoose.Schema({
 });
 Productschema.statics = {
     isValid(Pid) {
-       return this.findById(Pid)
-              .then(result => {
-                 if (!result) throw new Error('Product not found')
-       })
+        return this.findById(Pid)
+            .then(result => {
+                if (!result) throw new Error('Product not found')
+            })
     },
- }
+}
 
-module.exports = Product;
+module.exports = Productschema;

@@ -6,10 +6,10 @@ const { body, validationResult } = require('express-validator')
 const socketio = require('socket.io')
 const http = require('http')
 const generatemessage = require('./utils/messages')
-const app = express()
 const server = http.createServer(app)
 const io = socketio(server);
 const PORT = process.env.PORT || 3000;
+const bodyParser = require("body-parser");
 
 app.use(routes);
 app.use(bodyParser.json())

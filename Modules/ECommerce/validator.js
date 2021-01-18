@@ -1,4 +1,4 @@
-const { body, validationResult } = require('express-validator/check')
+const { body, validationResult } = require('express-validator')
 const Product = require('../../Schema/EcommerceSchema/productSchema')
 
 exports.validate = (method) => {
@@ -6,14 +6,14 @@ exports.validate = (method) => {
         case 'createProduct': {
             return [
                 body('Variants', 'Variant doesnt exists').isString(),
-                body('colors').exists().isString(),
-                body('quantity').isInt(),
-                body('status').optional().isString()
+                body('colors', 'Color Doesnot exist').exists().isString(),
+                body('quantity', 'quantity is Invalid').isInt(),
+                body('status', "Invalid Value").optional().isString()
             ]
         }
         case 'searchProduct': {
             return [
-                body.param('Pid').exists().isMongoId().custom(
+                body('Pid').exists().isMongoId().custom(
                     val => Product.ProductSchema.isValidproduct(val)
                 )
             ]
