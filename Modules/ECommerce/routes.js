@@ -29,9 +29,23 @@ router.post(
 router.get(
   "/getproduct/:Pid",
   validator.validate("searchProduct"),
-  async (req, res, next) => {
-      
-  }
+ 
+    async (req, res, next) => {
+        try {
+          const errors = validationResult(req);
+          if (!errors.isEmpty()) {
+            return res.status(422).json({ errors: errors.array() });
+          }
+          const data = controller.searchproduct();
+    
+          return res.status(200).json({ data });
+    
+          // Return a response to client.
+        } catch (err) {
+          next(err);
+        }
+      }
+  
 );
 module.exports = router;
 
