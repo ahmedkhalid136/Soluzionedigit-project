@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const Product = mongoose.Schema({
+const Productschema = new mongoose.Schema({
     //Variant Product to be added defined by the user
     variants: [{
         type: String
@@ -44,5 +44,13 @@ const Product = mongoose.Schema({
     }
 
 });
+Productschema.statics = {
+    isValid(Pid) {
+       return this.findById(Pid)
+              .then(result => {
+                 if (!result) throw new Error('Product not found')
+       })
+    },
+ }
 
 module.exports = Product;

@@ -1,16 +1,16 @@
 const mongoose = require("mongoose")
 const Client = mongoose.Schema({
-    wishlist:{
-        type:String        
+    wishlist: [{
+        type: String
+    }],
+    numberofOrders: {
+        type: Number,
     },
-    numberofOrders:{
-        type:Number,
+    Disputeindays: {
+        type: Date,
     },
-    Disputeindays:{
-       type:Date,
-    },
-    OrderHistory:{
-        type:String
-    }
+    OrderHistory: [{
+        type: String
+    }]
 })
-module.exports=Client;
+module.exports = Client;
