@@ -1,10 +1,9 @@
 const express = require("express");
 const router = express.Router();
+const Controller = require("./controller.js");
+const Validator = require("./validator.js");
 
 
-router.get("/ECommerce", function (req, res) {
-    console.log("ECommerce Route");
-    res.send("<h1>ECommerce Route</h1>")
-});
+router.route("/").get(Validator.validate, Controller.addProduct);
 
 module.exports = router;

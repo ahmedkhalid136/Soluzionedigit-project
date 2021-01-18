@@ -5,9 +5,8 @@ const path = require('path');
 const expressValidator = require('express-validator')
 const socketio = require('socket.io')
 const http = require('http')
-const app = express()
-const server =http.createServer(app)
-const io =socketio(server);
+const server = http.createServer(app)
+const io = socketio(server);
 const PORT = process.env.PORT || 3000;
 
 app.use(routes);

@@ -7,7 +7,8 @@ const Place = mongoose.Schema({
     couponCode: {
         code: { type: String, required: true },
         price: { type: Number, required: true },
-        productID: { type: String, required: true }
+        productID: { type: String, required: true },
+        unique: true
     },
     freeShipping: {
         type: Boolean,
@@ -25,7 +26,8 @@ const Place = mongoose.Schema({
         totalOrderPerMonth: { type: Number },
         mostNavigatedCategory: { type: String },
         trendingProducts: [{ type: String }],
-        saleComparison: { type: Number }
+        saleComparison: { type: Number },
+
     }
 
 });
