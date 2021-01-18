@@ -8,15 +8,15 @@ const Productschema = new mongoose.Schema({
     //Quantity of the product
     quantity: {
         type: Number,
-        required: true
+        // required: true
     },
     description: {
         type: String,
-        required: true
+        // required: true
     },
     pictures: [{
         type: String,
-        required: true
+        // required: true
     }],
     category: [{
         type: String
@@ -29,18 +29,18 @@ const Productschema = new mongoose.Schema({
     },
     tag: {
         type: String,
-        required: true
+        // required: true
     },
     reviews: [{
         type: String
     }],
     shippingCost: {
         type: String,
-        required: true
+        // required: true
     },
     featured: {
         type: Boolean,
-        default: false
+        // default: false
     }
 
 });
@@ -53,4 +53,4 @@ Productschema.statics = {
     },
 }
 
-module.exports = Productschema;
+module.exports.Productschema = Productschema;

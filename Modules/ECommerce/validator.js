@@ -5,10 +5,17 @@ exports.validate = (method) => {
     switch (method) {
         case 'createProduct': {
             return [
-                body('Variants', 'Variant doesnt exists').isString(),
-                body('colors', 'Color Doesnot exist').exists().isString(),
-                body('quantity', 'quantity is Invalid').isInt(),
-                body('status', "Invalid Value").optional().isString()
+                body('variants', 'Variant doesnt exists').isString(),
+                body('quantity').isInt(),
+                body('description').isString(),
+                body('pictures').isString(),
+                body('category').isString(),
+                body('discountPrice').isInt().optional(),
+                body('couponCode').isString().optional(),
+                body('tag').isString().optional(),
+                body('reviews').isString().optional(),
+                body('shippingCost').isInt(),
+                body('featured').isBoolean().optional()
             ]
         }
         case 'searchProduct': {

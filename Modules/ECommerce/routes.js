@@ -1,8 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const validator = require("./validator");
-const controller = require("./controller");
-const { validationResult } = require('express-validator');
+const validator = require("./validator.js");
+const controller = require("./controller.js");
+const { validationResult, body } = require('express-validator');
+const bodyParser = require("body-parser");
+router.use(bodyParser.urlencoded({ extended: true }));
 
 router.get("/ECommerce", function (req, res) {
   console.log("ECommerce Route");
@@ -17,7 +19,7 @@ router.post(
       if (!errors.isEmpty()) {
         return res.status(422).json({ errors: errors.array() });
       }
-      const data = controller.addproduct();
+      const data = controller.addproduct;
 
       return res.status(200).json({ data });
 
@@ -28,6 +30,12 @@ router.post(
     console.log(data);
   }
 );
+
+router.post("/product", (req, res) => {
+  console.log(req.body);
+})
+
+
 router.get(
   "/getproduct/:Pid",
   validator.validate("searchProduct"),

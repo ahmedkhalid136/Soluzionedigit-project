@@ -1,22 +1,29 @@
-const Product = require('../../Schema/EcommerceSchema/productSchema')
+const Product = require('../../Schema/EcommerceSchema/productSchema').Productschema
 
-const addproduct = (req, res, next) => {
-    const { Status, description, variants, quantity, color } = req.body
-    if (!Status || !description || !variants || !quantity) {
-        return {
-            error: 'Please fill all the fields'
-        }
-    }
-    else {
-        const user = Product.create({
-            Status,
-            description,
-            variants,
-            status
+const addproduct = async (req, res, next) => {
+    console.log("Hello World" + req.body.variants);
+    const { variants, quantity, description, pictures, category, discountPrice, couponCode, tag, reviews, shippingCost, featured } = req.body
+
+
+    const user = await new Product({
+        variants: variants,
+        quantity: quantity,
+        description: description,
+        pictures: pictures,
+        category: category,
+        discountPrice: discountPrice,
+        couponCode: couponCode,
+        tag: tag,
+        reviews: reviews,
+        shippingCost: shippingCost,
+        featured: featured
+    })
+        .then(user => {
+            res.json(user)
         })
-            .then(user => res.json(user))
-            .catch(next)
-    }
+        .catch(next)
+    console.log(user);
+
 }
 const searchproduct = (req, res, next) => {
     const Pid = req.params.Pid
@@ -36,4 +43,4 @@ const searchproduct = (req, res, next) => {
 
 
 
-module.exports = addproduct, searchproduct;
+module.exports.addproduct = addproduct;
