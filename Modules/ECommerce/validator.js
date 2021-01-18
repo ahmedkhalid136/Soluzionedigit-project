@@ -1,5 +1,5 @@
 const { body, validationResult } = require('express-validator/check')
-
+const Product = require('../../Schema/EcommerceSchema/productSchema')
 
 exports.validate = (method) => {
     switch (method) {
@@ -10,6 +10,14 @@ exports.validate = (method) => {
           body('quantity').isInt(),
           body('status').optional().isString()
          ]   
+      }
+      case 'searchProduct':{
+        return[
+          body.param('Pid').exists().isMongoId().custom(
+            val=>Product.ProductSchema.isValidproduct(val)
+          )
+        ]
+       
       }
     }
   }

@@ -1,4 +1,4 @@
-const Product = require('./EcommereceSchema/productSchema.js');
+const Product = require('../../Schema/EcommerceSchema/productSchema')
 
 const addproduct =(req,res,next)=>{
   const{Status,description,variants,quantity}=req.body
@@ -18,4 +18,6 @@ const addproduct =(req,res,next)=>{
       .catch(next)
   }
 }
+
+
 module.exports=addproduct;
