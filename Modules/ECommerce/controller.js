@@ -1,38 +1,36 @@
-const Product = require("../../Schema/EcommerceSchema/productSchema");
-const mongoose = require("mongoose");
+const Product = require("../../Schema/EcommerceSchema/productSchema").Productschema;
 
-const addproduct = async (req, res, next) => {
+
+exports.addproduct = async (req, res, next) => {
     try {
-        console.log("Hello World");
-        const { variants, quantity, description, pictures, category, discountPrice, couponCode, tag, reviews, shippingCost, featured } = req.body
+        console.log(req.body);
+        const { variants, quantity, description, pictures, category, discountPrice, couponCode, tag, reviews, shippingCost, featured } = req.body;
 
-
-        const user = await Product.create({
-            variants: variants,
-            quantity: quantity,
-            description: description,
-            pictures: pictures,
-            category: category,
-            discountPrice: discountPrice,
-            couponCode: couponCode,
-            tag: tag,
-            reviews: reviews,
-            shippingCost: shippingCost,
-            featured: featured
+        const user = new Product({
+            variants,
+            quantity,
+            description,
+            pictures,
+            category,
+            discountPrice,
+            couponCode,
+            tag,
+            reviews,
+            shippingCost,
+            featured
         })
         console.log(user);
+        res.json(user);
     }
     catch (err) {
-        return next(err)
+        console.log(err);
     }
-
-    return user;
-
 
 
 
 }
 const searchproduct = (req, res, next) => {
+
     const Pid = req.params.Pid
 
     try {
@@ -50,4 +48,3 @@ const searchproduct = (req, res, next) => {
 
 
 
-module.exports.addproduct = addproduct;

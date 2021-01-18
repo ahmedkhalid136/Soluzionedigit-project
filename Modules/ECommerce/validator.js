@@ -4,6 +4,7 @@ const Product = require('../../Schema/EcommerceSchema/productSchema')
 exports.validate = (method) => {
     switch (method) {
         case 'createProduct': {
+
             return [
                 body('variants', 'Variant doesnt exists').isString(),
                 body('quantity').isInt(),

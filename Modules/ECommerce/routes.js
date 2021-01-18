@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const validator = require("./validator.js");
-const controller = require("./controller.js");
+const controller = require("./controller.js")
 const { validationResult, body } = require('express-validator');
 const bodyParser = require("body-parser");
 router.use(bodyParser.urlencoded({ extended: true }));
@@ -17,10 +17,12 @@ router.post(
     try {
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
+        console.log(errors);
         return res.status(422).json({ errors: errors.array() });
       }
-      const data = controller.addproduct;
 
+      const data = controller.addproduct(req, res);
+      console.log(data);
       return res.status(200).json({ data });
 
       // Return a response to client.
