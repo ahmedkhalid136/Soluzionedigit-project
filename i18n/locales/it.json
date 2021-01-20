@@ -1,0 +1,97 @@
+{
+  "AUTH": {
+    "EMAIL_ALREADY_USED": "Email già utilizzata",
+    "EMAIL_AVAILABLE": "Email disponibile",
+    "INCORRECT_DATA": "L'email o la password inserite non sono valide."
+  },
+  "ERROR": {
+    "GENERIC": "Qualcosa è andato storto",
+    "MISSING_SETTING": "Impostazioni mancanti"
+  },
+  "BOOKING": {
+    "DELETED": "Prenotazione eliminata",
+    "NOT_FOUND": "Prenotazione non trovata",
+    "RETRIEVED": "Prenotazione trovata",
+    "AVAILABILITY_RETRIEVED": "Disponibilità recuperate"
+  },
+  "EMPLOYEE": {
+    "DELETED": "Dipendente eliminato",
+    "NOT_FOUND": "Dipendente non trovato",
+    "RETRIEVED": "Dipendente trovato"
+  },
+  "FREETIME": {
+    "DELETED": "Giorno libero eliminato",
+    "NOT_FOUND": "Giorno libero non trovato",
+    "RETRIEVED": "Giorno libero trovato"
+  },
+  "MEDIA": {
+    "DELETED": "File eliminato",
+    "IMAGE_ONLY": "Sono permesse solo immagini!",
+    "NOT_FOUND": "File non trovato",
+    "LIBRARY_ONLY": "Sono permessi solo file!"
+  },
+  "NOTIFICATION": {
+    "LIMIT_REACHED": "Limite di notifiche raggiunto",
+    "NOT_FOUND": "Notifica non trovata",
+    "ERROR": {
+      "CONTENTS": "Il contenuto della notifica è richiesto",
+      "RECIPIENT": "Il destinatario della notifica è richiesto"
+    }
+  },
+  "PLACE": {
+    "ALREADY_APPROVED": "L'attività era già approvata",
+    "APPROVED": "Attività approvata",
+    "CREATED": "Attività creata",
+    "DELETED": "Attività eliminata",
+    "NOT_FOUND": "Attività non trovata",
+    "RETRIEVED": "Attività trovata",
+    "UPDATED": "Attività aggiornata"
+  },
+  "PRODUCT": {
+    "ASK": "Prezzo su richiesta",
+    "FREE": "Gratuito",
+    "DELETED": "Prodotto eliminato",
+    "NOT_FOUND": "Prodotto non trovato",
+    "RETRIEVED": "Prodotto trovato",
+    "ERROR": {
+      "SALE_PRICE": "Errore: 'salePrice' deve essere inferiore a 'price'"
+    }
+  },
+  "SETTING": {
+    "DELETED": "Impostazione eliminata",
+    "DISABLED": "Impostazione disabilitata",
+    "NOT_EXISTING": "Questa impostazione non esiste",
+    "NOT_FOUND": "Impostazione non trovata",
+    "RETRIEVED": "Impostazione trovata"
+  },
+  "SUBUSER": {
+    "DELETED": "Sub-utente eliminato",
+    "NOT_FOUND": "Sub-utente non trovato",
+    "RETRIEVED": "Sub-utente trovato"
+  },
+  "SUPPORT": {
+    "DELETED": "Supporto eliminato",
+    "NOT_FOUND": "Supporto non trovato",
+    "RETRIEVED": "Supporto trovato",
+    "TIPS": "Chi non accetta consiglio non può essere aiutato. ~Benjamin Franklin"
+  },
+  "USER": {
+    "DELETED": "Utente eliminato",
+    "EMAIL_NOT_VERIFIED": "Verifica la email prima di accedere",
+    "LOGIN": "Utente loggato",
+    "NOT_FOUND": "Utente non trovato",
+    "PASSWORD_CHANGED": "Password modificata",
+    "PASS_RESET_REQUIRED": "Reset della password richiesto",
+    "RESET_NOT_REQ": "Ripristino non richiesto",
+    "RESET_REQ": "Ripristino password accettato, controlla la mail!",
+    "SIGNUP": "Utente registrato",
+    "UPDATED": "Utente aggiornato",
+    "WRONG_OLD_PASS": "La vecchia password è errata",
+    "RETRIEVED": "Utente trovato"
+  },
+  "WORKSHIFT": {
+    "DELETED": "Turno eliminato",
+    "NOT_FOUND": "Turno non trovato",
+    "RETRIEVED": "Turno trovato"
+  }
+}
